@@ -1,4 +1,3 @@
-const { sql, sqlConn } = require("../config/conexion");
 const { fecha } = require("../extras/fecha");
 let date = fecha();
 
@@ -13,3 +12,4 @@ const objetoResultadoSQL = (resultado) => {
 
   return { estatus: "OK", datos: resultado.recordset };
 };
+

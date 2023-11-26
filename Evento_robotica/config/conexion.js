@@ -1,47 +1,20 @@
-const sql = require("mysql");
-const { fecha } = require("../extras/fecha");
-let sqlConfig = {};
+var mysql = require('mysql');
 
-if (process.env.CONN_BASE) {
-  sqlConfig = process.env.CONN_BASE;
-} else {
-  sqlConfig = require("./credenciales");
-}
-
-let sqlConn = new sql.ConnectionPool(sqlConfig, (err) => {
-  let date=fecha();
-  if (err) {
-    console.log("No se pudo conectar a la BD, volviendo a intentar...");
-    connectSQL();
-  } else {
-    
-    console.log("Conectado a la BD", date);
-  }
+var conexion = mysql.createConnection({
+    host: 'localhost',
+    database: 'evento_robotica',
+    user: 'root',
+    password: '1234' 
 });
 
-let connectSQL = () => {
-  let date=fecha();
-  sqlConn
-    .connect()
-    .then(() => {
-      console.log("Conectado a la BD");
-    })
-    .catch((err) => {
-      if (err) {
-        console.log(
-          "No se pudo conectar a la BD, volviendo a intentar...",
-          date,
-          err
-        );
-        setTimeout(() => {
-          connectSQL();
-        }, 2500);
-      }
-    });
-};
+conexion.connect((err)=>{
+    if(err){
+        throw err;
+    }else{
+        console.log('Conexión exitosa')
+    }
+});
 
-module.exports = {
-  sqlConn,
-  sql,
-  sqlConfig
-};
+
+
+module.exports={conexion}
