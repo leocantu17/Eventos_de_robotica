@@ -21,15 +21,20 @@
                 <input type="text" class="form-control" id="asesorEqu">
             </div>
             <label>Categoría</label>
-            <select class="form-select">
+            <select class="form-select" id="catEqu">
                 <option value="1">Primaria</option>
                 <option value="2">Secundaria</option>
                 <option value="3">Preparatoria</option>
                 <option value="4">Universidad</option>
             </select>
-                <button type="click" class="btn btn-primary">Agregar equipo</button>
+             <div class="mb-3">
+                <label for="asesorEqu" class="form-label">Institucion</label>
+                <input type="text" class="form-control" id="instEqu">
+            </div>
+                <button type="click" class="btn btn-primary" id="agr-equ">Agregar equipo</button>
         </form>
         </div>
-   </div> 
+   </div>
+   <script src="../js/agregar-equipo.js"></script> 
 </body>
 </html>

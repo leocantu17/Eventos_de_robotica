@@ -4,7 +4,7 @@ const path=require('path');
 // const fileUpload = require('express-fileupload');
 const app=express();
 const mysql = require('mysql');
-// const init = require('./config/sesion_seq');
+const session = require('express-session');
 const port=process.env.PORT || 3000
 app.set('view engine','hbs');
 app.set('views',path.join(__dirname,'./views'));
@@ -17,7 +17,11 @@ hbs.registerPartials(path.join(__dirname, `./views/partials`));
 // app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.urlencoded({ extended: false }));
-
+app.use(session({
+    secret: 'tu_secreto',
+    resave: true,
+    saveUninitialized: true
+  }));
 // app.use(fileUpload({
 //     limits: { fileSize: 50 * 1024 * 1024 },
 //   }));

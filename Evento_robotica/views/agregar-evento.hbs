@@ -43,10 +43,7 @@
 
     </style>
 <body>
-
-    <header>
         <h1>Evento</h1>
-    </header>
     
     <form class="login">
         <div class="mb-3">
@@ -61,14 +58,17 @@
             <label for="fechaE" class="form-label">Fecha</label>
             <input type="text" class="form-control" id="fechaE">
         </div>
+        <button id="agr-evento" class="btn btn-primary" type="button">Agregar</button>
     </form>
     <script>
         flatpickr("#fechaE", {
             enableTime: false, 
             dateFormat: "Y-m-d",
-            minDate: "2023-11",
+            minDate: "today",
             maxDate:"2031-12-31" 
         });    
     </script>
+    <script src="../js/agregar_evento.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>
