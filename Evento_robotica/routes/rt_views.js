@@ -1,7 +1,7 @@
 const express = require('express');
-const { conexion } = require('../config/conexion');
+const ctrl_evento = require('../controllers/controllers_rt/ctrl_evento');
+const ctrl_evento_v = require('../controllers/controllers_views/ctrl_evento_v');
 const router = express.Router();
-
 
 router.get('/',(req,res)=>{
     try {
@@ -13,26 +13,14 @@ router.get('/',(req,res)=>{
 
 router.get('/iniciar-sesion',(req,res)=>{
     try{
-        res.render('pagina-principal')
+        res.render('iniciar-sesion')
     }catch(error){
     }
 })
 
-router.get('/agregar-evento',async(req,res)=>{
-    try {
-        res.render('agregar-evento')
-    } catch (error) {
-        console.log(error)
-    }
-})
+router.get('/agregar-evento',ctrl_evento_v.rtVistaAgregarEvento)
 
-router.get('/tabla-institucion',(req,res)=>{
-    try {
-        res.render('tabla-institucion')
-    } catch (error) {
-        console.log(error)
-    }
-})
+router.get('/tabla-institucion/:id',ctrl_evento.rtInstitucionParticipantes)
 
 router.get('/agregar-equipo',(req,res)=>{
     try {
@@ -70,13 +58,37 @@ router.get('/detalles-proyecto',(req,res)=>{
     try {
         conexion.query('SELECT * FROM EVENTO',(error,resultado)=>{
             if (error) throw error;
-            console.log(resultado)
+            const resultadoDB=resultado.length>0?resultado[0].CODIGO_EVENTO:null
+            res.render('detalles-proyecto',{})
         })
-        res.render('detalles-proyecto')
+       
     } catch (error) {
         console.log(error)
     }
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 router.get('*',(req,res)=>{
     res.render('404')
 })

@@ -22,11 +22,13 @@
      <div class="row align-items-center">
         <div class="col">
             <h4>Lista de participantes</h4>
+            {{#each evento}}
             <ol class="list-group list-group-numbered" style="width: 20rem;">
-                <li class="list-group-item">Integrante uno</li>
+                <li class="list-group-item">{{CODIGO_EVENTO}}</li>
                 <li class="list-group-item">Integrante dos</li>
                 <li class="list-group-item">Integrante tres</li>
             </ol>
+            {{/each}}
         </div>
     </div>
 </body>
