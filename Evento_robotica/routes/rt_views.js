@@ -1,6 +1,9 @@
 const express = require('express');
 const ctrl_evento = require('../controllers/controllers_rt/ctrl_evento');
 const ctrl_evento_v = require('../controllers/controllers_views/ctrl_evento_v');
+const ctrl_juez_v = require('../controllers/controllers_views/ctrl_juez_v');
+const ctrl_equipo_v = require('../controllers/controllers_views/ctrl_equipo_v');
+const { mdwRtSesion } = require('../extras/mdw_sesiones');
 const router = express.Router();
 
 router.get('/',(req,res)=>{
@@ -18,17 +21,19 @@ router.get('/iniciar-sesion',(req,res)=>{
     }
 })
 
-router.get('/agregar-evento',ctrl_evento_v.rtVistaAgregarEvento)
-
-router.get('/tabla-institucion/:id',ctrl_evento.rtInstitucionParticipantes)
-
-router.get('/agregar-equipo',(req,res)=>{
+router.get('/session',(req,res)=>{
     try {
-        res.render('agregar-equipo')
+        res.json(req.session.user)
+        
     } catch (error) {
         console.log(error)
     }
 })
+router.get('/agregar-evento',[mdwRtSesion],ctrl_evento_v.rtVistaAgregarEvento)
+
+router.get('/tabla-institucion/:id',ctrl_evento.rtInstitucionParticipantes)
+
+router.get('/agregar-equipo',ctrl_equipo_v.rtVistaAgregarEquipo)
 
 router.get('/agregar-participante',(req,res)=>{
     try {
@@ -68,7 +73,7 @@ router.get('/detalles-proyecto',(req,res)=>{
 })
 
 
-
+router.get('/agregar-juez',ctrl_juez_v.rtVistaAgregarJuez)
 
 
 

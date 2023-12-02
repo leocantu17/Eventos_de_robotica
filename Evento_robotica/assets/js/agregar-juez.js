@@ -1,15 +1,19 @@
 document.addEventListener('DOMContentLoaded',() => {
     
-    const btnAgrEve = document.getElementById('agr-evento');
+    const btnAgrEve = document.getElementById('agr-juez');
     btnAgrEve.addEventListener('click', (event)  =>{
             event.preventDefault();           
             const data = {
-                nombreEve: document.getElementById('nombreE').value,
-                zonaEve: document.getElementById('zonaE').value,
-                fechaEve: document.getElementById('fechaE').value,
+                nombreJuez: document.getElementById('nombreJuez').value,
+                estJuez: document.getElementById('estJuez').value,
+                instJuez: document.getElementById('instJuez').value,
+                corJuez:document.getElementById('corJuez').value,
+                conJuez:document.getElementById('conJuez').value,
+                catJuez:document.getElementById('catJuez').value,
+                eveJuez:document.getElementById('eveJuez').value
             }
 
-            fetch('/rt-agregar-evento', {
+            fetch('/rt-agregar-juez', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

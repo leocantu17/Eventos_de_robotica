@@ -8,17 +8,15 @@
     <title>Agregar equipo</title>
 </head>
 <body>
-   <div class="position-absolute top-50 start-50 translate-middle">
-        <div class="card text-bg-light mb-3" style="width:40rem;">
-            <div class="card-header">Agregar equipo</div>
+    
+         <h1>Agregar equipo</h1> 
+          
         <form>
+            <div class="card text-bg-light mb-3" style="width:40rem;">
+            <h4>Datos del equipo</h4>
             <div class="mb-3">
                 <label for="nombreEqu" class="form-label">Nombre</label>
                 <input type="text" class="form-control" id="nombreEqu" aria-describedby="emailHelp">
-            </div>
-            <div class="mb-3">
-                <label for="asesorEqu" class="form-label">Asesor</label>
-                <input type="text" class="form-control" id="asesorEqu">
             </div>
             <label>Categoría</label>
             <select class="form-select" id="catEqu">
@@ -27,13 +25,30 @@
                 <option value="3">Preparatoria</option>
                 <option value="4">Universidad</option>
             </select>
-             <div class="mb-3">
-                <label for="asesorEqu" class="form-label">Institucion</label>
-                <input type="text" class="form-control" id="instEqu">
             </div>
+            <div class="card text-bg-light mb-3" style="width:40rem;">
+                <h4>Datos del asesor</h4>
+                <div class="mb-3">
+                    <label for="asesorEqu" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="asesorEqu">
+                </div>
+                <div class="mb-3">
+                    <label for="asesorEqu" class="form-label">Estudios</label>
+                    <input type="text" class="form-control" id="estAsesorEqu">
+                </div>
+                <div class="mb-3">
+                    <label for="asesorEqu" class="form-label">Correo</label>
+                    <input type="email" class="form-control" id="corAsesorEqu">
+                </div>
+                <div class="mb-3">
+                    <label for="asesorEqu" class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" id="conAsesorEqu">
+                </div>
+             </div>
+            
+
                 <button type="click" class="btn btn-primary" id="agr-equ">Agregar equipo</button>
         </form>
-        </div>
    </div>
    <script src="../js/agregar-equipo.js"></script> 
 </body>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <title>Agregar juez</title>
+</head>
+<body>
+    
+    <h1>Juez</h1>
+    
+    <form class="login">
+        <div class="mb-3">
+            <label for="nombreE" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombreJuez" maxlength="60">
+        </div>
+        <div class="mb-3">
+            <label for="zonaE" class="form-label">Estudios</label>
+            <input type="text" class="form-control" id="estJuez" maxlength="40">
+        </div>
+        <div class="mb-3">
+                <label for="asesorEqu" class="form-label">Institucion</label>
+                <input type="text" class="form-control" id="instJuez" maxlength="100">
+            </div>
+            <div class="mb-3">
+                <label for="asesorEqu" class="form-label">Correo</label>
+                <input type="text" class="form-control" id="corJuez" maxlength="100">
+            </div>
+            <div class="mb-3">
+                <label for="asesorEqu" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" id="conJuez" maxlength="20">
+            </div>
+        <label>Categoría</label>
+            <select class="form-select" id="catJuez">
+                <option value="1">Primaria</option>
+                <option value="2">Secundaria</option>
+                <option value="3">Preparatoria</option>
+                <option value="4">Universidad</option>
+            </select>
+        <label>Evento</label>
+            <select class="form-select" id="eveJuez">
+                {{#each resultado}}
+                <option value="{{CODIGO_EVENTO}}">{{NOMBRE}}</option>
+                {{/each}}
+            </select>
+
+        <button id="agr-juez" class="btn btn-primary" type="button">Agregar</button>
+    </form>
+    <script src="../js/agregar-juez.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

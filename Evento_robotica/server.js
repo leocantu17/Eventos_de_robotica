@@ -20,7 +20,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(session({
     secret: 'tu_secreto',
     resave: true,
-    saveUninitialized: true
+    saveUninitialized: true,
+    cookie:{maxAge:60*1000*40}
   }));
 // app.use(fileUpload({
 //     limits: { fileSize: 50 * 1024 * 1024 },
