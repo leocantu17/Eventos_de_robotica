@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Institucion</title>
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+<style>
+        body,html{
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .form-register {
+            border: 1px solid #E1E1E1;
+            border-radius: 5px;
+            padding: 17px;
+            width: 300px;
+            position: absolute;
+            top:50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+              @media(max-width:400px){
+            login{
+                width: 90%;
+            }
+        }
+
+    </style>
+<body>
+    <section class="form-register">
+        <h4>Registro Institucion</h4>
+        <input class="controls" type="text" name="Nombre" id="Nombre" placeholder="Ingrese el nombre ">
+        <input class="controls" type="text" name="Nivel" id="Nivel" placeholder="Ingrese el nivel ">
+        <input class="controls" type="email" name="email" id="email" placeholder="Ingrese el correo ">
+        <input class="controls" type="password" name="contraseña" id="contraseña" placeholder="Ingrese la contraseña ">
+        <input class="boton" type="submit" value="Registrar">
+    </section>
+</body>
+</html>
