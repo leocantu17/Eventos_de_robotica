@@ -74,8 +74,7 @@ router.get('/detalles-proyecto',(req,res)=>{
 
 
 router.get('/agregar-juez',ctrl_juez_v.rtVistaAgregarJuez)
-
-
+router.get('/tabla-evento',ctrl_evento_v.rtVistaTablaEvento)
 
 
 

@@ -11,7 +11,7 @@ const ctrl_juez_v={
         } catch (error) {
             console.log(error)
         }
-    }
+    },
 }
 
 module.exports=ctrl_juez_v
