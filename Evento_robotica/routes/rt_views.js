@@ -4,7 +4,7 @@ const ctrl_evento_v = require('../controllers/controllers_views/ctrl_evento_v');
 const ctrl_juez_v = require('../controllers/controllers_views/ctrl_juez_v');
 const ctrl_equipo_v = require('../controllers/controllers_views/ctrl_equipo_v');
 const { conexion } = require('../config/conexion');
-const { mdwRtSesion, mdWRtInstitucion, mdwRtSuper, mdwRtJuezSuper, mdWRtAsesorInstitucion, mdWRtInstitucionJuez, mdwRTParticipanteInstAse } = require('../extras/mdw_sesiones');
+const { mdwRtSesion, mdWRtInstitucion, mdwRtSuper, mdwRtJuezSuper, mdWRtAsesorInstitucion, mdWRtInstitucionJuez, mdwRTParticipanteInstAse, mdWRtParticipante } = require('../extras/mdw_sesiones');
 const ctrl_institucion_v = require('../controllers/controllers_views/ctrl_institucion_v');
 const ctrl_proyecto_v = require('../controllers/controllers_views/ctrl_proyecto_v');
 const ctrl_participante_v = require('../controllers/controllers_views/ctrl_participante_v');
@@ -45,27 +45,7 @@ router.get('/calificar-equipo/:id',[mdwRtSesion,mdwRtJuezSuper],ctrl_juez_v.rtVi
 router.get('/modificar-asesor',[mdwRtSesion,mdWRtInstitucion],ctrl_institucion_v.rtVistaModificarAsesor)
 router.get('/tabla-equipos/:id',[mdwRtSesion,mdwRtJuezSuper],ctrl_juez_v.rtVistaEquipoEvento)
 router.get('/tabla-proyecto',[mdwRtSesion,mdwRTParticipanteInstAse],ctrl_proyecto_v.rtVistaTablaProyecto)
-router.get('/detalles-equipo',(req,res)=>{
-try {
-    conexion.query(`call detalles_equipo(${req.session.user.id})`,(error,resultado)=>{
-        if(error) console.log(error)
-        res.render('detalles-equipo',{equipo: resultado[0]})
-    })
-   
-} catch (error) {
-    
-}
-
-})
-
-
-
-
-
-
-
-
-
+router.get('/detalles-equipo',[mdwRtSesion,mdWRtParticipante],ctrl_equipo_v.rtVistaDetallesEquipo)
 router.get('*',(req,res)=>{
     res.render('404')
 })

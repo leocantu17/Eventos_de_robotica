@@ -31,7 +31,7 @@ rtcalificar_equipos : async(req,res)=>{
         if ( codCalf==''||softCalf==''||complejCalf==''||demostCalf==''||presCalf==''||redaCalf==''||medCalf==''||diagCalf==''||sensCalf==''||velCalf==''||velCalf==''||estabCalf==''||protoCalf=='') {
             
         }else{
-            const suma=codCalf+softCalf+complejCalf+demostCalf+presCalf+redaCalf+medCalf+diagCalf+sensCalf+velCalf+estabCalf+protoCalf
+            const suma=parseInt(codCalf)+parseInt(softCalf)+parseInt(complejCalf)+parseInt(demostCalf)+parseInt(presCalf)+parseInt(redaCalf)+parseInt(medCalf)+parseInt(diagCalf)+parseInt(sensCalf)+parseInt(velCalf)+parseInt(estabCalf)+parseInt(protoCalf)
             conexion.query(`call CALIFICAR_EQUIPO(${suma},${id})`,(error,resultado)=>{
                 if (error) {
                     console.log(error)

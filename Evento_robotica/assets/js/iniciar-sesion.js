@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded',() => {
                         location.href='/agregar-evento'
                     })
                     
-                }else{
+                }else if(data.estatus=='ERR'){
                     Swal.fire({
                         title:`${data.message}`,
                         icon:'warning'

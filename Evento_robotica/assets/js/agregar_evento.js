@@ -41,5 +41,3 @@ document.addEventListener('DOMContentLoaded',() => {
         } );
 
     } );
-
-    id:event.target.getAttribute('data-id')

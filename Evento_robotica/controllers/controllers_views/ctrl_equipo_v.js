@@ -19,6 +19,17 @@ const ctrl_equipo_v={
         } catch (error) {
             console.log(error)
         }
+    },
+    rtVistaDetallesEquipo:async(req,res)=>{
+        try {
+            conexion.query(`call detalles_equipo(${req.session.user.id})`,(error,resultado)=>{
+                if(error) console.log(error)
+                res.render('detalles-equipo',{equipo: resultado[0]})
+            })
+           
+        } catch (error) {
+            
+        }
     }
 }
 
