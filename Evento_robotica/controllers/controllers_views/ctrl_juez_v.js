@@ -14,8 +14,8 @@ const ctrl_juez_v={
     },
     rtVistaCalificarEquipo:async(req,res)=>{
         try {
-            
-            res.render('calificar-equipos')
+            const id=req.params.id;
+            res.render('calificar-equipos',{id})
         } catch (error) {
             console.log(error)
         }
