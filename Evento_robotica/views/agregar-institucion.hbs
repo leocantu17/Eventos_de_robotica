@@ -33,17 +33,17 @@
 
     </style>
 <body>
-    {{!-- <section class="form-register"> --}}
+        {{>header}}
         <h4>Registro Institucion</h4>
         <label for="asesorEqu" class="form-label">Nombre</label>
-        <input class="form-control" type="text" name="Nombre" id="nomInst" placeholder="Ingrese el nombre ">
+        <input class="form-control" type="text" name="Nombre" id="nomInst" placeholder="Ingrese el nombre " oninput="validarLet(this)">
         <br>
         <label for="asesorEqu" class="form-label">Nivel</label>
-        <input class="form-control" type="text" name="Nivel" id="nivInst" placeholder="Ingrese el nivel ">
+        <input class="form-control" type="text" name="Nivel" id="nivInst" placeholder="Ingrese el nivel " oninput="validarLet(this)">
         
         <div class="mb-3">
                     <label for="asesorEqu" class="form-label">Direccion</label>
-                    <input type="text" class="form-control" id="dirInst">
+                    <input type="text" class="form-control" id="dirInst" oninput="validarqe(this)">
                 </div>
                 <label for="asesorEqu" class="form-label">Evento</label>
             <select class="form-select" id="eveInst">
@@ -54,14 +54,14 @@
             </select>
             <br>
             <label for="asesorEqu" class="form-label">Correo</label>
-            <input class="form-control" type="email" name="email" id="corInst" placeholder="Ingrese el correo ">
+            <input class="form-control" type="email" name="email" id="corInst" placeholder="Ingrese el correo " oninput="validarCorreo(this)">
             <br>
             <label for="asesorEqu" class="form-label">Contraseña</label>
-        <input class="form-control" type="password" name="contraseña" id="conInst" placeholder="Ingrese la contraseña">
+        <input class="form-control" type="password" name="contraseña" id="conInst" placeholder="Ingrese la contraseña" oninput="validarqe(this)">
         <input  type="button" value="Registrar"  class="btn btn-primary"  id="agr-inst">
-    {{!-- </section> --}}
 
     <script src="../js/agregar-institucion.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/expre_regu.js"></script>
 </body>
 </html>

@@ -1,3 +1,4 @@
+const { conexion } = require("../../config/conexion")
 
 
 const ctrl_equipo_v={
@@ -10,7 +11,11 @@ const ctrl_equipo_v={
     },
     rtVistaTablaEquipo:async(req,res)=>{
         try {
-            res.render('tabla-equipo')
+            conexion.query(`CALL EQUIPOS_INSTITUCION(${req.session.user.id})`,(error,resultado)=>{
+                if(error) console.log(error)
+                
+                res.render('tabla-equipo',{equipo:resultado[0]})
+            })
         } catch (error) {
             console.log(error)
         }

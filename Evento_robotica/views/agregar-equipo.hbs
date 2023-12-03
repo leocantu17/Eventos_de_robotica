@@ -8,7 +8,7 @@
     <title>Agregar equipo</title>
 </head>
 <body>
-    
+            {{>header}}
          <h1>Agregar equipo</h1> 
           
         <form>
@@ -16,7 +16,7 @@
             <h4>Datos del equipo</h4>
             <div class="mb-3">
                 <label for="nombreEqu" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="nombreEqu" aria-describedby="emailHelp">
+                <input type="text" class="form-control" id="nombreEqu" aria-describedby="emailHelp" oninput="validarLet(this)">
             </div>
             <label>Categoría</label>
             <select class="form-select" id="catEqu">
@@ -31,27 +31,26 @@
                 <h4>Datos del asesor</h4>
                 <div class="mb-3">
                     <label for="asesorEqu" class="form-label">Nombre</label>
-                    <input type="text" class="form-control" id="asesorEqu">
+                    <input type="text" class="form-control" id="asesorEqu" oninput="validarLet(this)">
                 </div>
                 <div class="mb-3">
                     <label for="asesorEqu" class="form-label">Estudios</label>
-                    <input type="text" class="form-control" id="estAsesorEqu">
+                    <input type="text" class="form-control" id="estAsesorEqu" oninput="validarLet(this)">
                 </div>
                 <div class="mb-3">
                     <label for="asesorEqu" class="form-label">Correo</label>
-                    <input type="email" class="form-control" id="corAsesorEqu">
+                    <input type="email" class="form-control" id="corAsesorEqu" oninput="validarCorreo(this)">
                 </div>
                 <div class="mb-3">
                     <label for="asesorEqu" class="form-label">Contraseña</label>
-                    <input type="password" class="form-control" id="conAsesorEqu">
+                    <input type="password" class="form-control" id="conAsesorEqu" oninput="validarqe(this)">
                 </div>
              </div>
-            
-
                 <button type="click" class="btn btn-primary" id="agr-equ">Agregar equipo</button>
         </form>
    </div>
    <script src="../js/agregar-equipo.js"></script> 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/expre_regu.js"></script>
 </body>
 </html>

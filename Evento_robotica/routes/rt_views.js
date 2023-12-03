@@ -3,7 +3,7 @@ const ctrl_evento = require('../controllers/controllers_rt/ctrl_evento');
 const ctrl_evento_v = require('../controllers/controllers_views/ctrl_evento_v');
 const ctrl_juez_v = require('../controllers/controllers_views/ctrl_juez_v');
 const ctrl_equipo_v = require('../controllers/controllers_views/ctrl_equipo_v');
-const { mdwRtSesion, mdWRtInstitucion, mdwRtSuper, mdwRtJuezSuper, mdWRtAsesorInstitucion } = require('../extras/mdw_sesiones');
+const { mdwRtSesion, mdWRtInstitucion, mdwRtSuper, mdwRtJuezSuper, mdWRtAsesorInstitucion, mdWRtInstitucionJuez, mdwRTParticipanteInstAse } = require('../extras/mdw_sesiones');
 const ctrl_institucion_v = require('../controllers/controllers_views/ctrl_institucion_v');
 const ctrl_proyecto_v = require('../controllers/controllers_views/ctrl_proyecto_v');
 const ctrl_participante_v = require('../controllers/controllers_views/ctrl_participante_v');
@@ -38,10 +38,10 @@ router.get('/agregar-juez',[mdwRtSesion],ctrl_juez_v.rtVistaAgregarJuez)
 router.get('/tabla-evento',[mdwRtSesion,mdwRtJuezSuper],ctrl_evento_v.rtVistaTablaEvento)
 router.get('/agregar-institucion',ctrl_institucion_v.rtVistaAgregarInst)
 router.get('/agregar-proyecto',[mdwRtSesion,mdWRtInstitucion],ctrl_proyecto_v.rtVistaAgregarPro)
-
-
-
-
+router.get('/calificar-equipo/:id',[mdwRtSesion,mdwRtJuezSuper],ctrl_juez_v.rtVistaCalificarEquipo)
+router.get('/modificar-asesor',[mdwRtSesion,mdWRtInstitucion],ctrl_institucion_v.rtVistaModificarAsesor)
+router.get('/tabla-equipos/:id',[mdwRtSesion,mdwRtJuezSuper],ctrl_juez_v.rtVistaEquipoEvento)
+router.get('/tabla-proyecto',[mdwRtSesion,mdwRTParticipanteInstAse],ctrl_proyecto_v.rtVistaTablaProyecto)
 
 
 

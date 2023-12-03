@@ -8,17 +8,18 @@
     <title>Agregar proyecto</title>
 </head>
 <body>
+        {{>header}}
     <h1>Agregar proyecto</h1> 
           
         <form>
             <div class="card text-bg-light mb-3" style="width:40rem;">
             <div class="mb-3">
                 <label for="nombreEqu" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="nomPro" aria-describedby="emailHelp">
+                <input type="text" class="form-control" id="nomPro" aria-describedby="emailHelp" oninput="validarLet(this)">
             </div>
             <div class="mb-3">
                 <label for="nombreEqu" class="form-label">Descripcion</label>
-                <input type="text" class="form-control" id="descPro" aria-describedby="emailHelp">
+                <input type="text" class="form-control" id="descPro" aria-describedby="emailHelp" oninput="validarqe(this)" >
             </div>
             <label>Estado</label>
             <select class="form-select" id="estPro">
@@ -40,5 +41,6 @@
    </div>
    <script src="../js/agregar-proyecto.js"></script>
    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+   <script src="../js/expre_regu.js"></script>
 </body>
 </html>

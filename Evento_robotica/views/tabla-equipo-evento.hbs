@@ -14,19 +14,21 @@
             <thead>
                 <h4>Equipos Participantes</h4>
                 <tr>
-                    <th scope="col">Código de equipo</th>
                     <th scope="col">Nombre</th>
                     <th scope="col">Asesor</th>
                     <th scope="col">Cátegoria</th>
+                    <th scope="col">Insitucion</th>
+                    <th scope="col">Nivel</th>
                 </tr>
             </thead>
             <tbody>
                 {{#each equipo}}
                 <tr>
-                    <th scope="row">{{@index}}</th>
-                    <td>{{NOMBRE}}</td>
+                    <th scope="row">{{NOMBRE}}</th>
                     <td>{{NOMBRE_ASE}}</td>
                     <td>{{TIPO}}</td>
+                    <td>{{NOMBRE_INSTITUCION}}</td>
+                    <td>{{NIVEL}}</td>
                 </tr>
                 {{/each}}
             </tbody>

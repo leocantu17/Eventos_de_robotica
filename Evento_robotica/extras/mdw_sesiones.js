@@ -9,23 +9,26 @@ if (req.session.user){
 }
 
 const mdwRtSuper=async(req,res,next)=>{
-
-
     if(req.session.user.puesto=='SUPER'){
         next()
     }else{
         res.redirect('/iniciar-sesion')
     }
-
-
 }
 
 const mdwRtJuezSuper=async(req,res,next)=>{
-    console.log(req.session.user.puesto)
     if(req.session.user.puesto=='JUEZ'||req.session.user.puesto=='SUPER'){
         next()
     }else{
         res.redirect('/iniciar-sesion')
+    }
+}
+
+const mdWRtInstitucionJuez=async(req,res,next)=>{
+    if(req.session.user.puesto=='INSTITUCION'||req.session.user.puesto=='JUEZ'){
+        next()
+    }else{
+        res.redirect('/404')
     }
 }
 
@@ -34,7 +37,6 @@ const mdWRtInstitucion=async(req,res,next)=>{
         next()
     }else{
         res.redirect('/iniciar-sesion')
-
     }
 }
 
@@ -43,7 +45,6 @@ const mdWRtAsesorInstitucion=async(req,res,next)=>{
         next()
     }else{
         res.redirect('/iniciar-sesion')
-
     }
 }
 
@@ -52,7 +53,13 @@ const mdWRtParticipante=async(req,res,next)=>{
         next()
     }else{
         res.redirect('/iniciar-sesion')
-
+    }
+}
+const mdwRTParticipanteInstAse=async(req,res,next)=>{
+    if(req.session.user.puesto=='PARTICIPANTE'||req.session.user.puesto=='ASESOR'||req.session.user.puesto=='INSTITUCION'){
+        next()
+    }else{
+        res.redirect('/iniciar-sesion')
     }
 }
 
@@ -62,5 +69,7 @@ module.exports = {
     mdWRtInstitucion,
     mdWRtParticipante,
     mdwRtJuezSuper,
-    mdwRtSuper
+    mdwRtSuper,
+    mdWRtInstitucionJuez,
+    mdwRTParticipanteInstAse
 }

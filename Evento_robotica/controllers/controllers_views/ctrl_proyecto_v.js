@@ -22,6 +22,16 @@ const ctrl_proyecto_v={
         } catch (error) {
             console.log(error)
         }
+    },
+    rtVistaTablaProyecto:async(req,res)=>{
+        try {
+            conexion.query(`CALL PROYECTO_INSC(${req.session.user.id},'${req.session.user.puesto}')`,(error,resultado)=>{
+                if(error) console.log(error)
+                res.render('proyecto-participante',{proyecto:resultado[0]})
+            })
+        } catch (error) {
+            console.log(error)
+        }
     }
 }
 

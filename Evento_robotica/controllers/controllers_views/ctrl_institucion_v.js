@@ -11,6 +11,13 @@ const ctrl_institucion_v={
         } catch (error) {
             console.log(error)
         }
+    },
+    rtVistaModificarAsesor:async(req,res)=>{
+        try {
+            res.render('eliminar-asesor')
+        } catch (error) {
+            console.log(error)
+        }
     }
 }
 

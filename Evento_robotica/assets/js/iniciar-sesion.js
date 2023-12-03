@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded',() => {
                         title:`${data.message}`,
                         icon:'success'
                     }).then(()=>{
-                        location.href='/pagina-principal'
+                        location.href='/tabla-proyecto'
                     })
                     
                 }else if(data.estatus=='OKA'){

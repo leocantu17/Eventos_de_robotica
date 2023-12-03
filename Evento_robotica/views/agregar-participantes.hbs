@@ -8,27 +8,28 @@
     <title>Agregar participante</title>
 </head>
 <body>
+        {{>header}}
        <h1>Agregar participante</h1> 
         <form>
             <div class="mb-3">
                 <label for="numEsc" class="form-label">Numero escolar</label>
-                <input type="text" class="form-control" id="numEsc" aria-describedby="emailHelp">
+                <input type="text" class="form-control" id="numEsc" aria-describedby="emailHelp" oninput="validarNum(this)">
             </div>
             <div class="mb-3">
                 <label for="nombreAlu" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="nombreAlu">
+                <input type="text" class="form-control" id="nombreAlu" oninput="validarLet(this)">
             </div>
             <div class="mb-3">
                 <label for="edadAlu" class="form-label">Edad</label>
-                <input type="number" class="form-control" id="edadAlu">
+                <input type="number" class="form-control" id="edadAlu" oninput="validarNum(this)">
             </div>
              <div class="mb-3">
                 <label for="edadAlu" class="form-label">Correo</label>
-                <input type="email" class="form-control" id="corAlu">
+                <input type="email" class="form-control" id="corAlu" oninput="validarCorreo(this)">
             </div>
             <div class="mb-3">
                 <label for="edadAlu" class="form-label">Contraseña</label>
-                <input type="password" class="form-control" id="conAlu">
+                <input type="password" class="form-control" id="conAlu" oninput="validarqe(this)">
             </div>
              <label>Equipo</label>
             <select class="form-select" id="equAlu">
@@ -41,5 +42,6 @@
         </form>
         <script src="../js/agregar-participante.js"></script>
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="../js/expre_regu.js"></script>
 </body>
 </html>
