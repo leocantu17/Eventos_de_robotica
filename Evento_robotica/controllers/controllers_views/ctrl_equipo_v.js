@@ -7,6 +7,13 @@ const ctrl_equipo_v={
         } catch (error) {
             throw error
         }
+    },
+    rtVistaTablaEquipo:async(req,res)=>{
+        try {
+            res.render('tabla-equipo')
+        } catch (error) {
+            console.log(error)
+        }
     }
 }
 

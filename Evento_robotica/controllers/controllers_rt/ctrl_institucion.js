@@ -11,7 +11,14 @@ const ctrl_institucion={
                     if(error) console.log(error);
                     conexion.query('SELECT @MENSAJE AS MENSAJE',(error,resultado)=>{
                         if(error) console.log(error);
-                        console.log(resultado)
+                        const mensaje=resultado[0].MENSAJE;
+                        if(mensaje=='EXI'){
+                            res.json({estatus:'EXI',message:'Ya existe una institución con este nombre'})
+                        }else if(mensaje=='COR'){
+                            res.json({estatus:'COR',message:'El correo ya fue registrado'})
+                        }else{
+                            res.json({estatus:'OK',message:'Agregado correctamente'})
+                        }
                     })
                 })
             }

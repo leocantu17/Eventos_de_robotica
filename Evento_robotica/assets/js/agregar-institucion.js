@@ -21,6 +21,21 @@ document.addEventListener('DOMContentLoaded',() => {
             } )
             .then((response) => response.json())
             .then((data) => {
+                if(data.estatus=='OK'){
+                    Swal.fire({
+                        title:'Agregado',
+                        icon:'success',
+                        text:`${data.message}`
+                    }).then(()=>{
+                        location.href='/agregar-institucion'
+                    })
+                }else{
+                    Swal.fire({
+                        title:'Error',
+                        icon:'warning',
+                        text:`${data.message}`
+                    })
+                }
             } )
             .catch((error) =>{
                 console.log(error);

@@ -33,24 +33,33 @@
 
     </style>
 <body>
-    <section class="form-register">
+    {{!-- <section class="form-register"> --}}
         <h4>Registro Institucion</h4>
-        <input class="controls" type="text" name="Nombre" id="nomInst" placeholder="Ingrese el nombre ">
-        <input class="controls" type="text" name="Nivel" id="nivInst" placeholder="Ingrese el nivel ">
+        <label for="asesorEqu" class="form-label">Nombre</label>
+        <input class="form-control" type="text" name="Nombre" id="nomInst" placeholder="Ingrese el nombre ">
+        <br>
+        <label for="asesorEqu" class="form-label">Nivel</label>
+        <input class="form-control" type="text" name="Nivel" id="nivInst" placeholder="Ingrese el nivel ">
         
         <div class="mb-3">
                     <label for="asesorEqu" class="form-label">Direccion</label>
                     <input type="text" class="form-control" id="dirInst">
                 </div>
+                <label for="asesorEqu" class="form-label">Evento</label>
             <select class="form-select" id="eveInst">
+                <option value="">Selecciona</option>
                 {{#each evento}}
                 <option value="{{CODIGO_EVENTO}}">{{NOMBRE}}</option>
                 {{/each}}
             </select>
-            <input class="controls" type="email" name="email" id="corInst" placeholder="Ingrese el correo ">
-        <input class="controls" type="password" name="contraseña" id="conInst" placeholder="Ingrese la contraseña">
-        <input class="boton" type="button" value="Registrar" id="agr-inst">
-    </section>
+            <br>
+            <label for="asesorEqu" class="form-label">Correo</label>
+            <input class="form-control" type="email" name="email" id="corInst" placeholder="Ingrese el correo ">
+            <br>
+            <label for="asesorEqu" class="form-label">Contraseña</label>
+        <input class="form-control" type="password" name="contraseña" id="conInst" placeholder="Ingrese la contraseña">
+        <input  type="button" value="Registrar"  class="btn btn-primary"  id="agr-inst">
+    {{!-- </section> --}}
 
     <script src="../js/agregar-institucion.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>

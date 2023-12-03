@@ -1,18 +1,18 @@
 document.addEventListener('DOMContentLoaded',() => {
     
-    const btnAgrEqu = document.getElementById('agr-equ');
-    btnAgrEqu.addEventListener('click', (event)  =>{
+    const btnAgrPar = document.getElementById('agr-par');
+    btnAgrPar.addEventListener('click', (event)  =>{
             event.preventDefault();           
             const data = {
-                nombreEqu: document.getElementById('nombreEqu').value,
-                catEqu: document.getElementById('catEqu').value,
-                asesorEqu: document.getElementById('asesorEqu').value,
-                estAsesorEqu:document.getElementById('estAsesorEqu').value,
-                corAsesorEqu:document.getElementById('corAsesorEqu').value,
-                conAsesorEqu:document.getElementById('conAsesorEqu').value,
+                numEsc: document.getElementById('numEsc').value,
+                nombreAlu: document.getElementById('nombreAlu').value,
+                edadAlu: document.getElementById('edadAlu').value,
+                corAlu:document.getElementById('corAlu').value,
+                conAlu:document.getElementById('conAlu').value,
+                equAlu:document.getElementById('equAlu').value
             }
 
-            fetch('/rt-agregar-equipo', {
+            fetch('/rt-agregar-participante', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded',() => {
                         icon:'success',
                         text:`${data.message}`
                     }).then(()=>{
-                        location.href='/agregar-equipo'
+                        location.href='/agregar-participante'
                     })
                 }else{
                     Swal.fire({

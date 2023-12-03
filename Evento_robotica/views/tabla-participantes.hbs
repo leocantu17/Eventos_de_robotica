@@ -13,21 +13,21 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th scope="col">Codigo alumno</th>
                     <th scope="col">Numero escolar</th>
                     <th scope="col">Nombre</th>
                     <th scope="col">Edad</th>
-                    <th scope="col">Eliminar</th>
+                    <th scope="col">Equipo</th>
                 </tr>
             </thead>
             <tbody>
+                    {{#each participantes}}
                 <tr>
-                    <th scope="row">1</th>
-                    <td>Numero escolar</td>
-                    <td>Nombre</td>
-                    <td>Edad</td>
-                    <td><button  type="button" class="btn btn-primary btn-sm">Eliminar</button></td>
+                    <td>{{NUMERO_ESCOLAR}}</td>
+                    <td>{{NOMBRE}}</td>
+                    <td>{{EDAD}}</td>
+                    <td>{{NOMBRE_E}}</td>
                 </tr>
+                    {{/each}}
             </tbody>
         </table>
     </div>

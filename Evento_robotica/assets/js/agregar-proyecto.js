@@ -1,18 +1,16 @@
 document.addEventListener('DOMContentLoaded',() => {
     
-    const btnAgrEqu = document.getElementById('agr-equ');
-    btnAgrEqu.addEventListener('click', (event)  =>{
+    const btnAgrPro = document.getElementById('agr-pro');
+    btnAgrPro.addEventListener('click', (event)  =>{
             event.preventDefault();           
             const data = {
-                nombreEqu: document.getElementById('nombreEqu').value,
-                catEqu: document.getElementById('catEqu').value,
-                asesorEqu: document.getElementById('asesorEqu').value,
-                estAsesorEqu:document.getElementById('estAsesorEqu').value,
-                corAsesorEqu:document.getElementById('corAsesorEqu').value,
-                conAsesorEqu:document.getElementById('conAsesorEqu').value,
+                nomPro: document.getElementById('nomPro').value,
+                descPro: document.getElementById('descPro').value,
+                estPro: document.getElementById('estPro').value,
+                equPro:document.getElementById('equPro').value
             }
 
-            fetch('/rt-agregar-equipo', {
+            fetch('/rt-agregar-proyecto', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -27,7 +25,7 @@ document.addEventListener('DOMContentLoaded',() => {
                         icon:'success',
                         text:`${data.message}`
                     }).then(()=>{
-                        location.href='/agregar-equipo'
+                        location.href='/agregar-proyecto'
                     })
                 }else{
                     Swal.fire({

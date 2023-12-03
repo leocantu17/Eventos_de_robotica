@@ -16,8 +16,18 @@ const ctrl_sesion={
                     id:id_cuenta,
                     puesto:puesto
                 }
-        res.cookie('sesion', req.sessionID, { maxAge: 3600000 }); 
-        res.json({estatus:'OK',message:'Bienvenido'})
+        res.cookie('sesion', req.sessionID, { maxAge: 360000 });
+        if(puesto=='INSTITUCION'){
+            res.json({estatus:'OKI',message:'Bienvenido'})
+        }else if(puesto=='PARTICIPANTE'){
+            res.json({estatus:'OKP',message:'Bienveniedo'})
+        }else if(puesto=='ASESOR'){
+            res.json({estatus:'OKA',message:'Bienvenido'})
+        }else if(puesto=='JUEZ'){
+            res.json({estatus:'OKJ',message:'Bienvenido'})
+        }else{
+            res.json({estatus:'OKS',message:'Bienvenido'})
+        }
       } else {
         res.json({estatus:'ERR',message:'Error en correo o contraseña'})
       }

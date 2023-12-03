@@ -13,7 +13,11 @@ const ctrl_juez={
                     conexion.query('SELECT @MENSAJE AS MENSAJE',(error,resultado)=>{
                         if(error) throw error;
                         const mensaje=resultado[0].MENSAJE;
-                        console.log(mensaje)
+                        if(mensaje=='EXI'){
+                            res.json({estatus:'EXI',message:'El correo ya fue registrado'})
+                        }else{
+                            res.json({estatus:'OK',message:'Agregado correctamente'})
+                        }
                     })
                 })
             }

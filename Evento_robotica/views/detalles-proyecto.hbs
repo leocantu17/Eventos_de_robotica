@@ -9,24 +9,24 @@
 </head>
 <body>
     <div class="container text-center">
+        {{#each proyecto}}
         <div class="col align-self-center">
-            <h1>Nombre del proyecto</h1>
+            <h1>{{NOMBRE}}</h1>
         </div>
     </div>
      <div class="row align-items-center">
         <div class="col">
-            <h2>Asesor</h2>
+            <h2>{{NOMBRE_ASE}}</h2>
         </div>
     </div>
+        {{/each}}
     <br>
      <div class="row align-items-center">
         <div class="col">
             <h4>Lista de participantes</h4>
-            {{#each evento}}
+            {{#each participantes}}
             <ol class="list-group list-group-numbered" style="width: 20rem;">
-                <li class="list-group-item">{{CODIGO_EVENTO}}</li>
-                <li class="list-group-item">Integrante dos</li>
-                <li class="list-group-item">Integrante tres</li>
+                <li class="list-group-item">{{NOMBRE}}</li>
             </ol>
             {{/each}}
         </div>

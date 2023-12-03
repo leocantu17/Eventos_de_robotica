@@ -8,35 +8,59 @@ if (req.session.user){
     
 }
 
-const mdwRtPuesto=async(req,res,next)=>{
-    const resultado=await usuario.puesto(req.session.usuario.RFC)
+const mdwRtSuper=async(req,res,next)=>{
 
-    const puesto=resultado.datos.map(elemento=>elemento.PUESTO)
 
-    if(puesto=='Administrador'){
+    if(req.session.user.puesto=='SUPER'){
         next()
     }else{
-        res.redirect('/')
+        res.redirect('/iniciar-sesion')
     }
 
 
 }
 
-const mdwRtDios=async(req,res,next)=>{
-    const resultado=await usuario.puesto(req.session.usuario.RFC)
-
-    const puesto=resultado.datos.map(elemento=>elemento.PUESTO)
-
-    if(puesto=='DIOS'){
+const mdwRtJuezSuper=async(req,res,next)=>{
+    console.log(req.session.user.puesto)
+    if(req.session.user.puesto=='JUEZ'||req.session.user.puesto=='SUPER'){
         next()
     }else{
-        res.redirect('/')
+        res.redirect('/iniciar-sesion')
     }
 }
 
+const mdWRtInstitucion=async(req,res,next)=>{
+    if(req.session.user.puesto=='INSTITUCION'){
+        next()
+    }else{
+        res.redirect('/iniciar-sesion')
+
+    }
+}
+
+const mdWRtAsesorInstitucion=async(req,res,next)=>{
+    if(req.session.user.puesto=='ASESOR'||req.session.user.puesto=='INSTITUCION'){
+        next()
+    }else{
+        res.redirect('/iniciar-sesion')
+
+    }
+}
+
+const mdWRtParticipante=async(req,res,next)=>{
+    if(req.session.user.puesto=='PARTICIPANTE'){
+        next()
+    }else{
+        res.redirect('/iniciar-sesion')
+
+    }
+}
 
 module.exports = {
     mdwRtSesion,
-    mdwRtPuesto,
-    mdwRtDios
+    mdWRtAsesorInstitucion,
+    mdWRtInstitucion,
+    mdWRtParticipante,
+    mdwRtJuezSuper,
+    mdwRtSuper
 }

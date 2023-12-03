@@ -8,9 +8,7 @@
     <title>Agregar participante</title>
 </head>
 <body>
-    <div class="position-absolute top-50 start-50 translate-middle">
-        <div class="card text-bg-light mb-3" style="width:25rem;">
-            <div class="card-header">Agregar participante</div>
+       <h1>Agregar participante</h1> 
         <form>
             <div class="mb-3">
                 <label for="numEsc" class="form-label">Numero escolar</label>
@@ -24,9 +22,24 @@
                 <label for="edadAlu" class="form-label">Edad</label>
                 <input type="number" class="form-control" id="edadAlu">
             </div>
-                <button type="click" class="btn btn-primary">Agregar equipo</button>
+             <div class="mb-3">
+                <label for="edadAlu" class="form-label">Correo</label>
+                <input type="email" class="form-control" id="corAlu">
+            </div>
+            <div class="mb-3">
+                <label for="edadAlu" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" id="conAlu">
+            </div>
+             <label>Equipo</label>
+            <select class="form-select" id="equAlu">
+                <option value="">Selecciona</option>
+                {{#each equipo}}
+                <option value={{ CODIGO_EQUIPO}}>{{NOMBRE}}</option>
+                {{/each}}
+            </select>
+                <button type="click" id="agr-par" class="btn btn-primary">Agregar participante</button>
         </form>
-        </div>
-   </div> 
+        <script src="../js/agregar-participante.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>

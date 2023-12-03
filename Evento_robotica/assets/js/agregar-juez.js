@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded',() => {
                         icon:'success',
                         text:`${data.message}`
                     }).then(()=>{
-                        location.href='/agregar-evento'
+                        location.href='/agregar-juez'
                     })
                 }else{
                     Swal.fire({
