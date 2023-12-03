@@ -7,7 +7,9 @@ document.addEventListener('DOMContentLoaded',() => {
                 nombreEqu: document.getElementById('nombreEqu').value,
                 catEqu: document.getElementById('catEqu').value,
                 asesorEqu: document.getElementById('asesorEqu').value,
-                instEqu:document.getElementById('instEqu').value
+                estAsesorEqu:document.getElementById('estAsesorEqu').value,
+                corAsesorEqu:document.getElementById('corAsesorEqu').value,
+                conAsesorEqu:document.getElementById('conAsesorEqu').value,
             }
 
             fetch('/rt-agregar-equipo', {

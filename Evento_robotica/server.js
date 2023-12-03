@@ -21,7 +21,7 @@ app.use(session({
     secret: 'tu_secreto',
     resave: true,
     saveUninitialized: true,
-    cookie:{maxAge:60*1000*40}
+    cookie:{maxAge:3600000 }
   }));
 // app.use(fileUpload({
 //     limits: { fileSize: 50 * 1024 * 1024 },

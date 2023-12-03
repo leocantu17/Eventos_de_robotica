@@ -29,8 +29,8 @@ const ctrl_evento={
             const evento=req.params.id;
             conexion.query(`CALL INSTITUCIONES_EVENTO(${evento})`,(error,resultado)=>{
                 if(error) throw error;
-                console.log(resultado)
-                res.render('tabla-institucion',{institucion:resultado})
+                console.log(resultado[0])
+                res.render('tabla-institucion',{institucion:resultado[0]})
             })
         } catch (error) {
             console.log(error)

@@ -4,6 +4,8 @@ const ctrl_evento_v = require('../controllers/controllers_views/ctrl_evento_v');
 const ctrl_juez_v = require('../controllers/controllers_views/ctrl_juez_v');
 const ctrl_equipo_v = require('../controllers/controllers_views/ctrl_equipo_v');
 const { mdwRtSesion } = require('../extras/mdw_sesiones');
+const { route } = require('./rt_routes');
+const ctrl_institucion_v = require('../controllers/controllers_views/ctrl_institucion_v');
 const router = express.Router();
 
 router.get('/',(req,res)=>{
@@ -77,7 +79,7 @@ router.get('/agregar-juez',ctrl_juez_v.rtVistaAgregarJuez)
 router.get('/tabla-evento',ctrl_evento_v.rtVistaTablaEvento)
 
 
-
+router.get('/agregar-institucion',ctrl_institucion_v.rtVistaAgregarInst)
 
 
 
