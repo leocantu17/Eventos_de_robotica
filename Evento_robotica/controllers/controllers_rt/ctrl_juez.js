@@ -24,7 +24,25 @@ const ctrl_juez={
         } catch (error) {
             console.log(error)
         }
+    }, 
+rtcalificar_equipos : async(req,res)=>{
+    try {
+        const{codCalf,softCalf,complejCalf,demostCalf,presCalf,redaCalf,medCalf,diagCalf,sensCalf,velCalf,estabCalf,protoCalf,id}=req.body
+        if ( codCalf==''||softCalf==''||complejCalf==''||demostCalf==''||presCalf==''||redaCalf==''||medCalf==''||diagCalf==''||sensCalf==''||velCalf==''||velCalf==''||estabCalf==''||protoCalf=='') {
+            
+        }else{
+            const suma=codCalf+softCalf+complejCalf+demostCalf+presCalf+redaCalf+medCalf+diagCalf+sensCalf+velCalf+estabCalf+protoCalf
+            conexion.query(`call CALIFICAR_EQUIPO(${suma},${id})`,(error,resultado)=>{
+                if (error) {
+                    console.log(error)
+                }
+            })
+            
+        }
+    } catch (error) {
+        
     }
+}
 }
 
 module.exports=ctrl_juez
