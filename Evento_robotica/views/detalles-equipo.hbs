@@ -20,21 +20,25 @@
                     <th scope="col">Cátegoria</th>
                     <th scope="col">Institucion</th>
                     <th scope="col">Nivel</th>
-                    <th scope="col">Participantes</th>
+                    <th scope="col">Puntos</th>
                 </tr>
             </thead>
             <tbody>
+                {{#each equipo}}
                 <tr>
-                    <th scope="row">Codigo de equipo</th>
-                    <td>Nombre</td>
-                    <td>Asesor</td>
-                    <td>Categoria</td>
-                    <td>Institucion</td>
-                    <td>Nivel</td>
-                    <td>Participantes</td>
+                    
+                    <th scope="row">{{CODIGO_EQUIPO}}</th>
+                    <td>{{NOMBRE}}</td>
+                    <td>{{NOMBRE_ASESOR}}</td>
+                    <td>{{TIPO}}</td>
+                    <td>{{NOMBRE_INSTITUCION}}</td>
+                    <td>{{NIVEL}}</td>
+                    <td>{{PUNTOS}}</td>
                 </tr>
+                {{/each}}
             </tbody>
         </table>
     </div>
 </body>
+
 </html>

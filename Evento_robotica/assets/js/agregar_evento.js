@@ -42,4 +42,4 @@ document.addEventListener('DOMContentLoaded',() => {
 
     } );
 
-    event.target.getAttribute('data-id')
+    id:event.target.getAttribute('data-id')

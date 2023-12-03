@@ -3,6 +3,7 @@ const ctrl_evento = require('../controllers/controllers_rt/ctrl_evento');
 const ctrl_evento_v = require('../controllers/controllers_views/ctrl_evento_v');
 const ctrl_juez_v = require('../controllers/controllers_views/ctrl_juez_v');
 const ctrl_equipo_v = require('../controllers/controllers_views/ctrl_equipo_v');
+const { conexion } = require('../config/conexion');
 const { mdwRtSesion, mdWRtInstitucion, mdwRtSuper, mdwRtJuezSuper, mdWRtAsesorInstitucion, mdWRtInstitucionJuez, mdwRTParticipanteInstAse } = require('../extras/mdw_sesiones');
 const ctrl_institucion_v = require('../controllers/controllers_views/ctrl_institucion_v');
 const ctrl_proyecto_v = require('../controllers/controllers_views/ctrl_proyecto_v');
@@ -11,7 +12,9 @@ const login = require('../controllers/controllers_views/ctrl_login');
 const router = express.Router();
 
 router.get('/',(req,res)=>{
-    try {
+    try { conexion.query('select*from evento',(error,resultado)=>{
+        console.log(resultado)
+    })
         res.render('pagina-principal')
     } catch (error) {
         console.log(error)
@@ -42,7 +45,18 @@ router.get('/calificar-equipo/:id',[mdwRtSesion,mdwRtJuezSuper],ctrl_juez_v.rtVi
 router.get('/modificar-asesor',[mdwRtSesion,mdWRtInstitucion],ctrl_institucion_v.rtVistaModificarAsesor)
 router.get('/tabla-equipos/:id',[mdwRtSesion,mdwRtJuezSuper],ctrl_juez_v.rtVistaEquipoEvento)
 router.get('/tabla-proyecto',[mdwRtSesion,mdwRTParticipanteInstAse],ctrl_proyecto_v.rtVistaTablaProyecto)
+router.get('/detalles-equipo',(req,res)=>{
+try {
+    conexion.query(`call detalles_equipo(${req.session.user.id})`,(error,resultado)=>{
+        if(error) console.log(error)
+        res.render('detalles-equipo',{equipo: resultado[0]})
+    })
+   
+} catch (error) {
+    
+}
 
+})
 
 
 
