@@ -30,11 +30,11 @@ document.addEventListener('DOMContentLoaded',() => {
             .then((data) => {
                 if(data.estatus=='OK'){
                     Swal.fire({
-                        title:'Agregado',
+                        title:'Calificación',
                         icon:'success',
                         text:`${data.message}`
                     }).then(()=>{
-                        location.href='/agregar-proyecto'
+                        location.reload()
                     })
                 }else{
                     Swal.fire({

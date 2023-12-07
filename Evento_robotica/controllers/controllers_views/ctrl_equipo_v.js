@@ -22,7 +22,7 @@ const ctrl_equipo_v={
     },
     rtVistaDetallesEquipo:async(req,res)=>{
         try {
-            conexion.query(`call detalles_equipo(${req.session.user.id})`,(error,resultado)=>{
+            conexion.query(`call detalles_equipo(${req.session.user.id},'${req.session.user.puesto}')`,(error,resultado)=>{
                 if(error) console.log(error)
                 res.render('detalles-equipo',{equipo: resultado[0]})
             })

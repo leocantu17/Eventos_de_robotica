@@ -5,7 +5,7 @@ const path=require('path');
 const app=express();
 const mysql = require('mysql');
 const session = require('express-session');
-const port=process.env.PORT || 3000
+const port=process.env.PORT || 3001
 app.set('view engine','hbs');
 app.set('views',path.join(__dirname,'./views'));
 hbs.registerPartials(path.join(__dirname, `./views`));

@@ -18,7 +18,7 @@ function validarNumDec(input) {
 
 function validarLet(input) {
     // Remover cualquier carácter no numérico o negativo
-    input.value = input.value.replace(/[^aA-zZ ]/g, '');
+    input.value = input.value.replace(/[^aA-zZáéíóúÁÉÍÓÚ ]/g, '');
 
     // Verificar si el número es positivo
     const numero = parseFloat(input.value);

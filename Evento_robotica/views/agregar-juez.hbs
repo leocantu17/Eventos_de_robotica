@@ -14,23 +14,23 @@
     <form class="login">
         <div class="mb-3">
             <label for="nombreE" class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="nombreJuez" maxlength="60" oninput="validarLet(this)">
+            <input type="text" class="form-control" id="nombreJuez" maxlength="60" oninput="validarLet(this)" autocomplete="off">
         </div>
         <div class="mb-3">
             <label for="zonaE" class="form-label">Estudios</label>
-            <input type="text" class="form-control" id="estJuez" maxlength="40" oninput="validarLet(this)">
+            <input type="text" class="form-control" id="estJuez" maxlength="40" oninput="validarLet(this)" autocomplete="off">
         </div>
         <div class="mb-3">
                 <label for="asesorEqu" class="form-label">Institucion</label>
-                <input type="text" class="form-control" id="instJuez" maxlength="100" oninput="validarLet(this)">
+                <input type="text" class="form-control" id="instJuez" maxlength="100" oninput="validarLet(this)" autocomplete="off">
             </div>
             <div class="mb-3">
                 <label for="asesorEqu" class="form-label">Correo</label>
-                <input type="text" class="form-control" id="corJuez" maxlength="100" oninput="validarCorreo(this)">
+                <input type="text" class="form-control" id="corJuez" maxlength="100" oninput="validarCorreo(this)" autocomplete="off">
             </div>
             <div class="mb-3">
                 <label for="asesorEqu" class="form-label">Contraseña</label>
-                <input type="password" class="form-control" id="conJuez" maxlength="20" oninput="validarqe(this)">
+                <input type="password" class="form-control" id="conJuez" maxlength="20" oninput="validarqe(this)" autocomplete="off">
             </div>
         <label>Categoría</label>
             <select class="form-select" id="catJuez">
@@ -53,5 +53,6 @@
     <script src="../js/agregar-juez.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../js/expre_regu.js"></script>
+    <script src="../js/cerrar-sesion.js"></script>
 </body>
 </html>

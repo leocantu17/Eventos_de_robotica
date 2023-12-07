@@ -10,7 +10,7 @@
 <body>
         {{>header}}
        <h1>Agregar participante</h1> 
-        <form>
+        <form autocomplete="off">
             <div class="mb-3">
                 <label for="numEsc" class="form-label">Numero escolar</label>
                 <input type="text" class="form-control" id="numEsc" aria-describedby="emailHelp" oninput="validarNum(this)">
@@ -25,11 +25,11 @@
             </div>
              <div class="mb-3">
                 <label for="edadAlu" class="form-label">Correo</label>
-                <input type="email" class="form-control" id="corAlu" oninput="validarCorreo(this)">
+                <input type="email" class="form-control" id="corAlu" oninput="validarCorreo(this)" maxlength="40">
             </div>
             <div class="mb-3">
                 <label for="edadAlu" class="form-label">Contraseña</label>
-                <input type="password" class="form-control" id="conAlu" oninput="validarqe(this)">
+                <input type="password" class="form-control" id="conAlu" oninput="validarqe(this)" maxlength="20">
             </div>
              <label>Equipo</label>
             <select class="form-select" id="equAlu">
@@ -43,5 +43,6 @@
         <script src="../js/agregar-participante.js"></script>
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="../js/expre_regu.js"></script>
+        <script src="../js/cerrar-sesion.js"></script>
 </body>
 </html>

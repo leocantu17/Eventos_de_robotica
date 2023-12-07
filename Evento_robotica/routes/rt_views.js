@@ -37,18 +37,19 @@ router.get('/agregar-participante',[mdwRtSesion,mdWRtInstitucion],ctrl_participa
 router.get('/tabla-participantes',[mdwRtSesion,mdWRtAsesorInstitucion],ctrl_participante_v.rtVistaTablaParticipante)
 router.get('/tabla-equipo',[mdwRtSesion,mdWRtInstitucion],ctrl_equipo_v.rtVistaTablaEquipo)
 router.get('/detalles-proyecto/:id',[mdwRtSesion,mdWRtAsesorInstitucion],ctrl_proyecto_v.rtVistaDetallesProyecto)
-router.get('/agregar-juez',[mdwRtSesion],ctrl_juez_v.rtVistaAgregarJuez)
+router.get('/agregar-juez',[mdwRtSesion,mdwRtSuper],ctrl_juez_v.rtVistaAgregarJuez)
 router.get('/tabla-evento',[mdwRtSesion,mdwRtJuezSuper],ctrl_evento_v.rtVistaTablaEvento)
 router.get('/agregar-institucion',ctrl_institucion_v.rtVistaAgregarInst)
 router.get('/agregar-proyecto',[mdwRtSesion,mdWRtInstitucion],ctrl_proyecto_v.rtVistaAgregarPro)
 router.get('/calificar-equipo/:id',[mdwRtSesion,mdwRtJuezSuper],ctrl_juez_v.rtVistaCalificarEquipo)
-router.get('/modificar-asesor',[mdwRtSesion,mdWRtInstitucion],ctrl_institucion_v.rtVistaModificarAsesor)
 router.get('/tabla-equipos/:id',[mdwRtSesion,mdwRtJuezSuper],ctrl_juez_v.rtVistaEquipoEvento)
 router.get('/tabla-proyecto',[mdwRtSesion,mdwRTParticipanteInstAse],ctrl_proyecto_v.rtVistaTablaProyecto)
-router.get('/detalles-equipo',[mdwRtSesion,mdWRtParticipante],ctrl_equipo_v.rtVistaDetallesEquipo)
+router.get('/detalles-equipo',[mdwRtSesion,mdwRTParticipanteInstAse],ctrl_equipo_v.rtVistaDetallesEquipo)
+router.get('/olvide-contrasena',login.rtOlvideContrasea)
 router.get('*',(req,res)=>{
     res.render('404')
 })
+
 
 
 module.exports=router

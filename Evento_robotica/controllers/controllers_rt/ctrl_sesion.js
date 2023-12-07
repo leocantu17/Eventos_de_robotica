@@ -1,4 +1,5 @@
 const { conexion } = require("../../config/conexion");
+const correos = require("../../extras/correos");
 
 
 const ctrl_sesion={
@@ -35,6 +36,47 @@ const ctrl_sesion={
     });
         }catch(err){
             console.log(err)
+        }
+    },
+    rtCerrarSesion:async(req,res)=>{
+        try {
+            req.session.destroy()
+            return res.json({estatus:'OK',message:'Sesión cerrada'})
+        } catch (error) {
+            console.log(error)
+        }
+    },
+    rtEvnarContrasen:async(req,res)=>{
+        try {
+            const{email}=req.body;
+            conexion.query(`CALL RECUPERAR_CONTRASENA('${email}',@CONTRASENA,@MENSAJE)`,(err,resultado)=>{
+                if(err) console.log(err)
+                conexion.query('SELECT @MENSAJE AS MENSAJE',(err,resultado)=>{
+            
+                if(err) console.log(err)
+                const mensaje=resultado[0].MENSAJE;
+                if(mensaje=='OK'){
+                conexion.query('SELECT @CONTRASENA AS CONTRASENA',(err,resultado)=>{
+                    if(err) console.log(err)
+                    
+                    const correoE = {
+                        to: `${email}`,
+                        bcc: ['leonardo.cantulara@hotmail.com'],
+                        subject: 'Código de verificación',
+                        template: 'contrasena',
+                        nombreCompleto:`${email}`,
+                        contrasena:resultado[0].CONTRASENA
+                      }
+                      correos.envio(correoE)
+                })
+            }else{
+                return res.json({estatus:'ERR',message:'El correo no existe'})
+            }
+            })
+            })
+           
+        } catch (error) {
+            console.log(error)
         }
     }
 }

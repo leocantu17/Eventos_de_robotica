@@ -1,6 +1,5 @@
 const { conexion } = require("../../config/conexion");
 
-
 const ctrl_proyecto={
     rtAgregarProyecto:async(req,res)=>{
         try {

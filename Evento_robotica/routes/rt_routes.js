@@ -17,4 +17,6 @@ router.post('/rt-agregar-institucion',ctrl_institucion.rtAgregarInstitucion)
 router.post('/rt-agregar-proyecto',ctrl_proyecto.rtAgregarProyecto)
 router.post('/rt-agregar-participante',ctrl_participante.rtAgregarParticipante)
 router.post('/rt-calificar-equipo',ctrl_juez.rtcalificar_equipos)
+router.post('/rt-cerrar-sesion',ctrl_sesion.rtCerrarSesion)
+router.post('/rt-enviar-contrasena',ctrl_sesion.rtEvnarContrasen)
 module.exports=router

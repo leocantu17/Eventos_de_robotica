@@ -16,6 +16,8 @@
     "hbs": "^4.2.0",
     "moment": "^2.29.4",
     "mysql": "^2.18.1",
-    "mysql2": "^3.6.3"
+    "mysql2": "^3.6.3",
+    "nodemailer": "^6.9.7",
+    "nodemailer-express-handlebars": "^6.1.0"
   }
 }

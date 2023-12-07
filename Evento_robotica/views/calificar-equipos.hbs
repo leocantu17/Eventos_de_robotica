@@ -47,6 +47,7 @@
 </head>
 
 <body>
+       {{>header}}
     <h2>Tabla de Calificaciones</h2>
     <table>
         <thead>
@@ -60,36 +61,36 @@
         <tbody>
             <!-- Se pueden agregar mas categorias-->
             <tr>
-                <td>Equipo 1</td>
+                <td>{{nombre}}</td>
                 <td>
                     <p>Código</p>
-                    <input type="number" min="1" max="10" name="programacion_codigo" id="codigocalf">
+                    <input type="text" min="1" max="10" name="programacion_codigo" id="codigocalf" oninput="validarNum(this)" maxlength="1" autocomplete="off">
                     <p>Software</p>
-                    <input type="number" min="1" max="10" name="programacion_software" id="softwarecalf">
+                    <input type="text" min="1" max="10" name="programacion_software" id="softwarecalf" oninput="validarNum(this)" maxlength="1" autocomplete="off">
                     <p>Complejidad</p>
-                    <input type="number" min="1" max="10" name="programacion_complejidad" id="complejidadcalf">
+                    <input type="text" min="1" max="10" name="programacion_complejidad" id="complejidadcalf" oninput="validarNum(this)" maxlength="1" autocomplete="off">
                     <p>Demostracion</p>
-                    <input type="number" min="1" max="10" name="programacion_demostracion" id="demostracioncalf">
+                    <input type="text" min="1" max="10" name="programacion_demostracion" id="demostracioncalf" oninput="validarNum(this)" maxlength="1" autocomplete="off">
                 </td>
                 <td>
                     <p>Presentación</p>
-                    <input type="number" min="1" max="10" name="diseno_presentacion" id="presentacioncalf">
+                    <input type="text" min="1" max="10" name="diseno_presentacion" id="presentacioncalf" oninput="validarNum(this)" maxlength="1" autocomplete="off">
                     <p>Redacción</p>
-                    <input type="number" min="1" max="10" name="diseno_redaccion" id="redaccioncalf">
+                    <input type="text" min="1" max="10" name="diseno_redaccion" id="redaccioncalf" oninput="validarNum(this)" maxlength="1" autocomplete="off">
                     <p>Medio Digital</p>
-                    <input type="number" min="1" max="10" name="diseno_medio_digital" id="mediocalf">
+                    <input type="text" min="1" max="10" name="diseno_medio_digital" id="mediocalf" oninput="validarNum(this)" maxlength="1" autocomplete="off">
                     <p>Diagramas</p>
-                    <input type="number" min="1" max="10" name="diseno_diagramas" id="diagramascalf">
+                    <input type="text" min="1" max="10" name="diseno_diagramas" id="diagramascalf" oninput="validarNum(this)" maxlength="1" autocomplete="off">
                 </td>
                 <td>
                     <p>Sensores</p>
-                    <input type="number" min="1" max="10" name="construccion_sensores" id="sensorescalf">
+                    <input type="text" min="1" max="10" name="construccion_sensores" id="sensorescalf" oninput="validarNum(this)" maxlength="1" autocomplete="off">
                     <p>Velocidad</p>
-                    <input type="number" min="1" max="10" name="construccion_velocidad" id="velocidadcalf">
+                    <input type="text" min="1" max="10" name="construccion_velocidad" id="velocidadcalf" oninput="validarNum(this)" maxlength="1" autocomplete="off">
                     <p>Estabilidad</p>
-                    <input type="number" min="1" max="10" name="construccion_estabilidad" id="estabilidadcalf">
+                    <input type="text" min="1" max="10" name="construccion_estabilidad" id="estabilidadcalf" oninput="validarNum(this)" maxlength="1" autocomplete="off">
                     <p>Prototipo</p>
-                    <input type="number" min="1" max="10" name="construccion_prototipo" id="prototipocalf">
+                    <input type="text" min="1" max="10" name="construccion_prototipo" id="prototipocalf" oninput="validarNum(this)" maxlength="1" autocomplete="off">
                 </td>
             </tr>
             <tr>
@@ -108,7 +109,10 @@
         </tbody>
     </table>
     <button id="subirCalificaciones" data-id={{id}}>Subir Calificaciones</button>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
    <script src="../js/calificar-equipos.js"></script>
+   <script src="../js/expre_regu.js"></script>
+    <script src="../js/cerrar-sesion.js"></script>
 </body>
 
 </html>
