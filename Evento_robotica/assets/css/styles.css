@@ -98,6 +98,14 @@
     line-height: 20px;
     color:gray;
     }
+
+    .login-box b{
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: gray;
+
+    }
     
     .login-box a :hover{
     color: #ffffff;
